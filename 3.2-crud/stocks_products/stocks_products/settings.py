@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'rest_framework',
 
     'logistic',
+
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -74,18 +76,23 @@ TEMPLATES = [
 WSGI_APPLICATION = 'stocks_products.wsgi.application'
 
 
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
+}
+
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'netology_stocks_products',
-        'HOST': '127.0.0.1',
+        'NAME': 'cruddb',
+        'USER': 'postgres',
+        'PASSWORD': '7Ff3imRYmE',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
