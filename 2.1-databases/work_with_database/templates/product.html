@@ -1,22 +1,15 @@
-{% extends "base.html" %}
-
-{% load static %}
-
-{% block title %}{{ phone.name }}{% endblock %}
-
-{% block content %}
-  <div class="container">
-  <div class="header">
-    <h5>
-      <a href="{% url 'catalog' %}">Вернуться в каталог</a>
-    </h5>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ phone.name }}</title>
+</head>
+<body>
     <h1>{{ phone.name }}</h1>
-  </div>
-
-  <div class="content">
-    <img src="{{ phone.image }}" alt="{{ phone.name }}"/>
-    <div>Стоимость: {{ phone.price }} ₽</div>
-    <div>Дата выпуска: {{ phone.release_date }}</div>
-    <div>LTE: {{ phone.lte_exists|yesno:'есть,нет' }}</div>
-  </div>
-{% endblock %}
+    <img src="{{ phone.image }}" alt="{{ phone.name }}">
+    <p>Price: {{ phone.price }}</p>
+    <p>Release Date: {{ phone.release_date }}</p>
+    <p>LTE Exists: {{ phone.lte_exists }}</p>
+    <a href="{% url 'catalog' %}">Back to Catalog</a>
+</body>
+</html>

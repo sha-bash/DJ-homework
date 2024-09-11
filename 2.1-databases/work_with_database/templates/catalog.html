@@ -20,7 +20,7 @@
     <div class="content">
       {% for phone in phones %}
         <div class="phone">
-          <a href="{% url 'phone' phone.slug %}">
+          <li><a href="{% url 'product' phone.slug %}">{{ phone.name }}</a></li>
             <h3>{{ phone.name }}</h3>
           </a>
           <div class="price">Стоимость: {{ phone.price }} ₽</div>
